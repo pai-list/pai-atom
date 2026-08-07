@@ -1,20 +1,30 @@
 {
   "name": "@pai/atom",
-  "version": "1.0.0",
   "description": "THE ATOM — Immutable PaiSkill ABI, UI Primitives & Google design.md Specification",
+  "version": "1.0.0",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26",
+    "typescript": "^5"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "build": "tsc",
     "lint:design": "npx @google/design.md lint DESIGN.md"
   },
-  "dependencies": {
-    "clsx": "^2.1.0",
-    "tailwind-merge": "^2.2.0"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pai-list/pai-atom.git"
   },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.7.0"
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/pai-list/pai-atom/issues"
   },
-  "license": "MIT"
+  "homepage": "https://github.com/pai-list/pai-atom#readme"
 }
