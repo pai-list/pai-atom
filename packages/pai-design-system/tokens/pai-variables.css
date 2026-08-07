@@ -1,0 +1,102 @@
+/* Hallmark + StyleSeed: design tokens enforcement */
+:root {
+  /* Hallmark: no default indigo (#4f46e5) - using #6865f2 */
+  --color-primary: #6865f2;
+  --color-primary-light: #8b8aff;
+  --color-primary-dark: #5555e6;
+  
+  /* Hallmark: no template layouts */
+  --layout-max-width: 1200px;
+  --layout-gutter: var(--spacing-4);
+  
+  /* StyleSeed: strict grammar enforcement */
+  --design-font-family-heading: 'JetBrains Mono', monospace;
+  --design-font-family-body: 'Inter', sans-serif;
+  --design-font-family-mono: 'JetBrains Mono', monospace;
+  
+  /* Hallmark: honest displays only */
+  --design-capability-display: block;
+  --design-accuracy-level: "honest";
+  
+  /* Hallmark: precise, technical, sovereign, minimal voice */
+  --design-voice: "technical";
+  --design-minimality: true;
+}
+
+/* Hallmark: No "AI-generated" aesthetics - authentic design */
+html {
+  font-family: var(--design-font-family-body);
+  line-height: 1.5;
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-50);
+}
+
+/* Hallmark: technical precision */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--design-font-family-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-3);
+}
+
+/* StyleSeed: grammar-based output */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.card {
+  background: var(--color-neutral-50);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+/* Hallmark: honest capability displays */
+.honest-display {
+  display: var(--design-capability-display);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hallmark: technical precision for interactive elements */
+.interactive-element {
+  position: relative;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.interactive-element:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.interactive-element:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hallmark: sovereignty - no default indigo overrides */
+*[data-theme="indigo-default"] {
+  display: none !important;
+}
+
+/* Hallmark: minimal template - custom layouts only */
+.template-layout {
+  display: none;
+}
+
+/* Hallmark: sovereignty - authentic spacing */
+.responsive-spacing {
+  margin: var(--layout-gutter);
+  padding: var(--spacing-4);
+}

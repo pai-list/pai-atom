@@ -1,0 +1,136 @@
+/* Hallmark + StyleSeed + Impeccable + Scrollytelling: Navigation Component */
+.nav,
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--spacing-2) 0;
+  margin: 0;
+  list-style: none;
+  background: var(--color-neutral-50);
+  border-radius: var(--border-radius-md);
+}
+
+/* Hallmark: Technical precision */
+.nav-link,
+.nav-item a {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  color: var(--color-neutral-700);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-item a:hover {
+  color: var(--color-primary);
+  background: var(--color-neutral-100);
+}
+
+.nav-link.active,
+.nav-item a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.nav-link.active::after,
+.nav-item a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: var(--border-radius-full);
+}
+
+/* Hallmark: Sovereign navigation - no template */
+.nav-sovereign {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.nav-sovereign .nav-link {
+  padding: var(--spacing-1) var(--spacing-3);
+  color: var(--color-neutral-600);
+}
+
+/* StyleSeed: Grammar enforcement */
+.grammar-output .nav {
+  margin-bottom: var(--spacing-4);
+}
+
+/* Scrollytelling: Scroll-triggered navigation */
+.nav-scroll {
+  position: fixed;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.nav-scroll.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-scroll .nav-link {
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--font-size-small);
+}
+
+/* Hallmark: Technical precision - focus states */
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Hallmark: Sovereign - no template */
+.nav-minimal {
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  padding: 0;
+  gap: var(--spacing-1);
+}
+
+.nav-minimal .nav-link {
+  padding: var(--spacing-1) 0;
+  border-left: 2px solid transparent;
+}
+
+.nav-minimal .nav-link.active {
+  border-left-color: var(--color-primary);
+  background: transparent;
+}
+
+/* Impeccable: Loading state */
+.nav.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Hallmark: Accessibility - reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .nav-link {
+    transition: none;
+  }
+  
+  .nav-scroll {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}

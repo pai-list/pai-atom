@@ -12,8 +12,12 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "tsc",
+    "build:tokens": "npm run build -w @pai/design-system",
     "lint:design": "npx @google/design.md lint DESIGN.md"
   },
   "type": "module",

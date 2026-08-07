@@ -1,0 +1,46 @@
+{
+  "name": "@pai/design-system",
+  "version": "0.1.0",
+  "description": "AxiomID Sovereign Constellation design system — tokens, SovLock, unified nav. Pinned by consumers, tags-only releases.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.js": "./dist/tokens.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "style-dictionary build --config style-dictionary.config.json",
+    "build:tokens": "style-dictionary build --config style-dictionary.config.json",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "sovereign-constellation",
+    "axiomid"
+  ],
+  "author": "PAI Universe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pai-list/pai-atom.git"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2"
+  },
+  "peerDependencies": {
+    "gsap": "^3.12.2"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.1",
+    "typescript": "^5",
+    "vitest": "^3"
+  }
+}
