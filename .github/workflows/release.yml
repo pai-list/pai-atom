@@ -1,0 +1,46 @@
+name: design-tokens-release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install
+        run: |
+          cd packages/pai-design-system
+          pnpm add -D style-dictionary vitest --ignore-workspace
+
+      - name: Build tokens
+        run: npm run build -w @pai/design-system
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Test
+        run: npm test -w @pai/design-system
+
+      - name: Align version with tag
+        run: npm version ${{ github.ref_name }} --no-git-tag-version -w @pai/design-system
+
+      - name: Publish
+        run: npm publish -w @pai/design-system --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

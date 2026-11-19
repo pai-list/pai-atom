@@ -1,0 +1,104 @@
+/* Hallmark + StyleSeed + Impeccable + Scrollytelling: Motion System */
+/* Scrollytelling: GSAP-powered animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--spacing-8));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(var(--spacing-8));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(var(--spacing-8));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hallmark: Technical precision - motion functions */
+.motion-smooth {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.motion-ease {
+  animation-timing-function: ease-in-out;
+}
+
+.motion-bounce {
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Impeccable: Performance optimization */
+.motion-gpu {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Hallmark: Accessibility - reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scrollytelling: Scroll-triggered animations */
+.scroll-animation {
+  will-change: transform, opacity;
+}
+
+.scroll-animation.active {
+  animation-fill-mode: forwards;
+}
+
+/* Hallmark: Sovereign - no default animations override */
+.motion-sovereign {
+  animation-duration: var(--transition-normal);
+  animation-timing-function: ease-in-out;
+}
+
+/* Hallmark: Technical precision - reduced keyframes */
+.motion-minimal {
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+}

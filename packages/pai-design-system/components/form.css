@@ -1,0 +1,81 @@
+/* Hallmark + StyleSeed + Impeccable + Scrollytelling: Form Components */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  max-width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: var(--font-size-body);
+  color: var(--color-neutral-700);
+}
+
+.form-control {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-body);
+  transition: all var(--transition-fast);
+  background: var(--color-neutral-50);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(104, 101, 242, 0.1);
+}
+
+/* Hallmark: Technical precision - sovereign forms */
+.form-sovereign {
+  background: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-5);
+}
+
+/* StyleSeed: Grammar enforcement */
+.grammar-output .form-control {
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-3);
+}
+
+.form-error {
+  color: var(--color-error);
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-1);
+}
+
+/* Hallmark: Accessibility - focus states */
+.form-control:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Hallmark: Accessibility - reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .form-control {
+    transition: none;
+  }
+}
+
+/* Scrollytelling: Scroll-triggered form reveal */
+.form-reveal {
+  opacity: 0;
+  transform: translateY(var(--spacing-4));
+  animation: formReveal 0.5s ease-out forwards;
+}
+
+@keyframes formReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
